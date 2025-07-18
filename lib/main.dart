@@ -1,3 +1,6 @@
+import 'package:event_app/core/routes/app_routes.dart';
+import 'package:event_app/core/routes/page_routes_name.dart';
+import 'package:event_app/core/theme_manager/theme_manager.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +15,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(),
+      theme: ThemeMangaer.lightTheme,
+      darkTheme: ThemeMangaer.darkTheme,
+      initialRoute: PageRoutesName.initial,
+      onGenerateRoute: AppRoutes.onGenerateRoutes,
     );
   }
 }
