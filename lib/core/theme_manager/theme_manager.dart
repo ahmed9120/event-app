@@ -4,7 +4,18 @@ import 'color_pallete.dart';
 
 abstract class ThemeMangaer{
   static ThemeData lightTheme= ThemeData(
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: ColorPallete.lightBackgroundColor,
+    appBarTheme: AppBarTheme(
+      backgroundColor: Colors.transparent,
+      iconTheme: IconThemeData(
+        color: Colors.black,
+      ),
+      titleTextStyle: TextStyle(
+        fontSize: 24,
+        fontWeight: FontWeight.w500,
+        color:ColorPallete.appbarTitleColor,
+      )
+    ),
     textTheme: TextTheme(
       bodyLarge: TextStyle(
         color: ColorPallete.white,
