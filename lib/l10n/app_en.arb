@@ -1,0 +1,30 @@
+{
+    "home":"Home",
+    "map":"Map",
+    "favorite":"Favorite",
+    "profile":"Profile",
+    "language": "Language",
+    "theme_mode": "Theme Mode",
+    "light": "Light",
+    "dark":"Dark",
+    "logout":"Logout",
+    "login":"Login",
+    "register":"Register",
+    "loginWithGoogle":"Login with Google",
+    "email": "Email",
+    "password": "Password",
+    "repassword": "Re Password",
+    "forgetPassword": "Forget Password",
+    "resetPassword":"Reset Password",
+    "createAccount": "Create Account",
+    "dontHaveAcc": "Don't Have Account",
+    "alreadyHaveAcc": "Already Have Account",
+    "or": "or",
+    "name": "Name",
+    "welcomeBack": "Welcome Back ✨"
+
+
+
+
+
+}

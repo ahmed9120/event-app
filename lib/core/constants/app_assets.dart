@@ -6,7 +6,28 @@ abstract class AppAssets{
   static const String password_icnn="assets/icons/passwordIcn.png";
   static const String person_icnn="assets/icons/personIcn.png";
   static const String google_icn= "assets/icons/googleIcn.png";
-
-
-
+  static const String home_icn= "assets/icons/homeIcn.png";
+  static const String map_icn= "assets/icons/mapIcn.png";
+  static const String favorites_icn= "assets/icons/favoritiesIcn.png";
+  static const String profile_icn= "assets/icons/profileIcn.png";
+  static const String home_icn_active= "assets/icons/homeIcnActive.png";
+  static const String map_icn_active= "assets/icons/mapIcnActive.png";
+  static const String favorites_icn_active= "assets/icons/favoritiesIcnActive.png";
+  static const String profile_icn_active= "assets/icons/profileIcnActive.png";
+  static const String light_theme_icn= "assets/icons/lightThemeIcn.png";
+  static const String birthday_img= "assets/images/birthday.png";
+  static const String bookclub_img= "assets/images/bookclub.png";
+  static const String eating_img= "assets/images/eating.png";
+  static const String exhibitation_img= "assets/images/exhibitation.png";
+  static const String gaming_img= "assets/images/gaming.png";
+  static const String holiday_img= "assets/images/holiday.png";
+  static const String meeting_img= "assets/images/meeting.png";
+  static const String sport_img= "assets/images/sport.png";
+  static const String workshop_img= "assets/images/workshop.png";
+  static const String sport_icn= "assets/icons/sportIcn.png";
+  static const String book_icn= "assets/icons/bookIcn.png";
+  static const String birthday_icn= "assets/icons/birthdayIcn.png";
+  static const String all_icn= "assets/icons/allIcn.png";
+  static const String route_img= "assets/images/routeImg.jpg";
+  static const String default_profile_img= "assets/images/defaultProfileImg.png";
 }

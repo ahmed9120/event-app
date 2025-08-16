@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-
-import '../constants/app_assets.dart';
 import '../theme_manager/color_pallete.dart';
 
 class CustomTextFormFiled extends StatefulWidget {
@@ -10,17 +7,23 @@ class CustomTextFormFiled extends StatefulWidget {
     this.controller,
     this.onChanged,
     this.onFiledSubmitted,
-    required this.prefixIcon,
+    this.prefixIcon,
     required this.hintText,
     this.isPassword = false,
+    this.minLines,
+    this.maxLines=1,
+    this.validator
   });
 
   final TextEditingController? controller;
   void Function(String)? onChanged;
   void Function(String)? onFiledSubmitted;
-  final Widget prefixIcon;
+  final Widget? prefixIcon;
   String hintText;
   bool isPassword;
+  int? minLines;
+  int maxLines;
+  String? Function(String?)? validator;
 
   @override
   State<CustomTextFormFiled> createState() => _CustomTextFormFiledState();
@@ -32,6 +35,10 @@ class _CustomTextFormFiledState extends State<CustomTextFormFiled> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      style: Theme.of(context).textTheme.bodyMedium!.copyWith(color: ColorPallete.textFiledBorderColor),
+      validator: widget.validator,
+      minLines: widget.minLines,
+      maxLines: widget.maxLines,
       controller: widget.controller,
       onChanged: widget.onChanged,
       onFieldSubmitted: widget.onFiledSubmitted,
