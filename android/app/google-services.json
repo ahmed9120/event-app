@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "597778347580",
+    "project_id": "even-app-e7e6f",
+    "storage_bucket": "even-app-e7e6f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:597778347580:android:d1914f0a6692d6bcf6b539",
+        "android_client_info": {
+          "package_name": "com.example.event_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "597778347580-36uu6q3fc0nnkornte544hsbjqddiqu4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDUkf7yolckoL4-P8NkPl2EnqU9HVxaKFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "597778347580-36uu6q3fc0nnkornte544hsbjqddiqu4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
