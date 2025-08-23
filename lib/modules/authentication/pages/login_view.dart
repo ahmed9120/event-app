@@ -181,9 +181,9 @@ class _LoginViewState extends State<LoginView> {
                 SizedBox(height: 24),
                 CustomButtom(
                   onTap: () {
-                    FireBaseAuthentication.signInWithGoogle().then((success){
+                    FireBaseAuthentication.signInWithGoogle().then((credential){
                       final user= FirebaseAuth.instance.currentUser;
-                      if(success){
+                      if(credential!=null){
                         provider.setUserNameAndEmailAndUid(name:user?.displayName??"User Name",email: user?.email??"email@domain.com",uid: user?.uid??"0");
                         Navigator.pushNamed(context, PageRoutesName.layout);
                       }

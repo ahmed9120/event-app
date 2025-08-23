@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import '../routes/page_routes_name.dart';
 import '../services/snackbar_services.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 abstract class FireBaseAuthentication {
   static Future<bool> createUserWithEmailAndPassword({
@@ -74,27 +75,26 @@ abstract class FireBaseAuthentication {
     await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
   }
 
-  static Future<bool> signInWithGoogle() async {
-    try {
-      //final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
-      final GoogleSignInAccount? googleUser = await GoogleSignIn.instance.authenticate();
 
-      if (googleUser != null) {
-        final GoogleSignInAuthentication googleAuth = googleUser.authentication;
-        final credential = GoogleAuthProvider.credential(
-          idToken: googleAuth.idToken,
-        );
-        final userGoogleCredential = await FirebaseAuth.instance.signInWithCredential(
-          credential,
-        );
-        log("Google sign-in successful: ${userGoogleCredential.user?.uid}");
-        return Future.value(true);
-      }
-      SnackbarServices.showErrorMessage("Something went wrong try");
-      return Future.value(false);
-    } catch (e) {
-      SnackbarServices.showErrorMessage("Something went wrong catch");
-      return Future.value(false);
+  static final GoogleSignIn _googleSignIn= GoogleSignIn.instance;
+
+  static Future<UserCredential?> signInWithGoogle() async {
+    try{
+      await _googleSignIn.initialize(
+          //not working throw .env don't know why yet
+          //serverClientId: dotenv.env['SERVER_CLIENT_ID'],
+          serverClientId: "597778347580-36uu6q3fc0nnkornte544hsbjqddiqu4.apps.googleusercontent.com",
+      );
+      final GoogleSignInAccount googleUser = await GoogleSignIn.instance.authenticate();
+      final GoogleSignInAuthentication googleAuth = googleUser.authentication;
+      final credential = GoogleAuthProvider.credential(idToken: googleAuth.idToken);
+      SnackbarServices.showSuccessMessage("login with google account succesfully");
+      return await FirebaseAuth.instance.signInWithCredential(credential);
+    }catch(e){
+      SnackbarServices.showErrorMessage("Something went wrong $e");
+      return null;
     }
+
+
   }
 }
